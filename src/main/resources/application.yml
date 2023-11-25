@@ -1,2 +1,15 @@
 server:
-  port: 8080
+  port: 8081
+spring:
+  datasource:
+    platform : postgres
+    url: jdbc:postgresql://localhost:5432/testdb
+    username: root
+    password: admin123
+    datasource:   postgres
+  jpa:
+    hibernate:
+      ddl-auto: none
+  logging:
+    level:
+      web: TRACE
