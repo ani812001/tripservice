@@ -1,6 +1,7 @@
 package com.trippy.controller;
 
 import com.trippy.Entity.Bookings;
+import com.trippy.Entity.BookingsDTO;
 import com.trippy.Service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Calendar;
 import java.util.List;
 
 @RestController
@@ -18,8 +20,13 @@ public class BookingController {
     private BookingService bookingService;
 
     @PostMapping("/book")
-    public Bookings postBookingDetails(@RequestBody Bookings bookings) {
-        return bookingService.saveBooking(bookings);
+    public Bookings postBookingDetails(@RequestBody BookingsDTO bookings) {
+         Bookings b = new Bookings();
+         b.setRefUserId(bookings.getRefUserId());
+         b.setNoOfSeats(bookings.getNoOfSeats());
+         b.setTourId(bookings.getTourId());
+         b.setCreatedAt(Calendar.getInstance().getTime());
+        return bookingService.saveBooking(b);
     }
 
     @GetMapping("/bookings")

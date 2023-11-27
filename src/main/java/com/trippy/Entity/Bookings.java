@@ -17,7 +17,7 @@ public class Bookings {
     private int noOfSeats;
 
     @Column(name = "ref_user_id")
-    private Long refId;
+    private Long refUserId;
 
     private String status;
 
@@ -56,12 +56,12 @@ public class Bookings {
         this.noOfSeats = noOfSeats;
     }
 
-    public Long getRefId() {
-        return refId;
+    public Long getRefUserId() {
+        return refUserId;
     }
 
-    public void setRefId(Long refId) {
-        this.refId = refId;
+    public void setRefUserId(Long refUserId) {
+        this.refUserId = refUserId;
     }
 
     public String getStatus() {
@@ -87,4 +87,5 @@ public class Bookings {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
+
 }

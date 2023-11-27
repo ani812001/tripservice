@@ -1,48 +1,31 @@
 package com.trippy.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.io.Serializable;
 
+public class BookingsDTO implements Serializable {
 
-public class BookingsDTO {
-
-
-    @Json
+    @JsonProperty
     private Long tourId;
 
-    @Column(name = "no_of_seats")
+    @JsonProperty
     private int noOfSeats;
 
-    @Column(name = "ref_user_id")
-    private Long refId;
+    @JsonProperty
+    private Long refUserId;
 
-    private String status;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "created_at")
-    private Date createdAt;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "updated_at")
-    private Date updatedAt;
 
     public BookingsDTO() {
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public long getTourId() {
+    public Long getTourId() {
         return tourId;
     }
 
-    public void setTourId(long tourId) {
+    public void setTourId(Long tourId) {
         this.tourId = tourId;
     }
 
@@ -54,35 +37,12 @@ public class BookingsDTO {
         this.noOfSeats = noOfSeats;
     }
 
-    public Long getRefId() {
-        return refId;
+    public Long getRefUserId() {
+        return refUserId;
     }
 
-    public void setRefId(Long refId) {
-        this.refId = refId;
+    public void setRefUserId(Long refUserId) {
+        this.refUserId = refUserId;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
 }
