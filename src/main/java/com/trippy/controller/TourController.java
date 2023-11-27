@@ -1,6 +1,6 @@
 package com.trippy.controller;
 
-import com.trippy.Entity.Tour;
+import com.trippy.Entity.Tours;
 import com.trippy.Service.TourService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,14 +18,14 @@ public class TourController {
     private TourService tourService;
 
     @PostMapping("/addTourEntity")
-    public Tour postDetails(@RequestBody Tour tripEntity)
+    public Tours postDetails(@RequestBody Tours tripEntity)
     {
         return tourService.saveDetail(tripEntity);
     }
 
 
     @GetMapping("/tours")
-    public ResponseEntity<List<Tour>> tours()
+    public ResponseEntity<List<Tours>> tours()
     {
         return ResponseEntity.ok(tourService.getAllTours());
     }
