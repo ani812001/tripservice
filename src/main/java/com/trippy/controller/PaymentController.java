@@ -1,11 +1,13 @@
 package com.trippy.controller;
 
 import com.trippy.Entity.Payments;
+import com.trippy.Entity.PaymentsDTO;
 import com.trippy.Service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Calendar;
 import java.util.List;
 
 @RestController
@@ -15,8 +17,15 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping("/payment")
-    public Payments postPayment(@RequestBody Payments payment) {
-        return paymentService.savePayment(payment);
+    public Payments postPayment(@RequestBody PaymentsDTO payment) {
+        Payments p = new Payments();
+        p.setBookingId(payment.getBookingId());
+        p.setCardNo(payment.getCardNo());
+        p.setStatus(payment.getStatus());
+        p.setDate(payment.getDate());
+        p.setAmount(payment.getAmount());
+        p.setCreatedAt(Calendar.getInstance().getTime());
+        return paymentService.savePayment(p);
     }
 
     @GetMapping("/payments")
