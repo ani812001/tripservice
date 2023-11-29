@@ -19,7 +19,9 @@ public class Payments {
     @Column(name = "card_no")
     private String cardNo;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private PaymentStatus status;
 
     private double amount;
 
@@ -66,11 +68,11 @@ public class Payments {
         this.cardNo = cardNo;
     }
 
-    public String getStatus() {
+    public PaymentStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(PaymentStatus status) {
         this.status = status;
     }
 

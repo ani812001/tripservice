@@ -20,6 +20,7 @@ public class Tours {
     private Date endDate;
 
     private int capacity;
+
     private double unitPrice;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -28,9 +29,49 @@ public class Tours {
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt;
 
+    private String text;
+
+    private String heading;
+
+    private String label;
+    private String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
 
     public Tours() {
     }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getHeading() {
+        return heading;
+    }
+
+    public void setHeading(String heading) {
+        this.heading = heading;
+    }
+
+
 
     public Date getStart_date() {
         return start_date;

@@ -1,5 +1,6 @@
 package com.trippy.controller;
 
+import com.trippy.Entity.PaymentStatus;
 import com.trippy.Entity.Payments;
 import com.trippy.Entity.PaymentsDTO;
 import com.trippy.Service.PaymentService;
@@ -17,11 +18,11 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping("/payment")
-    public Payments postPayment(@RequestBody PaymentsDTO payment) {
+    public Payments addPayment(@RequestBody PaymentsDTO payment) {
         Payments p = new Payments();
         p.setBookingId(payment.getBookingId());
         p.setCardNo(payment.getCardNo());
-        p.setStatus(payment.getStatus());
+        p.setStatus(PaymentStatus.completed);
         p.setDate(payment.getDate());
         p.setAmount(payment.getAmount());
         p.setCreatedAt(Calendar.getInstance().getTime());
