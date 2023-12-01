@@ -28,4 +28,8 @@ public class UserService {
     public Users getUserByEmail(String email){
         return userRepo.findByEmail(email);
     }
+
+    public Object login(String email, String password) {
+        return null;
+    }
 }

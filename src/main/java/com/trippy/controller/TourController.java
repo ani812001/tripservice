@@ -17,7 +17,7 @@ public class TourController {
     @Autowired
     private TourService tourService;
 
-    @PostMapping("/addTourEntity")
+    @PostMapping("/tours")
     public Tours postDetails(@RequestBody Tours tripEntity)
     {
         return tourService.saveDetail(tripEntity);
