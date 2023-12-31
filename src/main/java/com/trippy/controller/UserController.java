@@ -1,6 +1,6 @@
 package com.trippy.controller;
 
-import com.trippy.Entity.Users;
+import com.trippy.Entity.User;
 import com.trippy.Service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,17 +17,17 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/addUser")
-    public Users postUserDetails(@RequestBody Users user) {
+    public User postUserDetails(@RequestBody User user) {
         return userService.saveUser(user);
     }
 
     @GetMapping("/users")
-    public ResponseEntity<List<Users>> getUsers() {
+    public ResponseEntity<List<User>> getUsers() {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
     @GetMapping("/user")
-    public ResponseEntity<Users> getUser(@RequestParam(name = "email") String email){
+    public ResponseEntity<User> getUser(@RequestParam(name = "email") String email){
         return ResponseEntity.ok(userService.getUserByEmail(email));
     }
 }

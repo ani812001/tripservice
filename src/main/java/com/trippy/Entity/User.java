@@ -6,12 +6,14 @@ import java.util.Date;
 
 @Entity
 @Table(name = "users")
-public class Users {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String email;
+
+    private String username;
 
     private String password;
 
@@ -26,7 +28,11 @@ public class Users {
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt;
 
-    public Users() {
+    public User() {
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public Long getId() {
@@ -84,5 +90,8 @@ public class Users {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
-}
 
+    public String getUsername() {
+        return null;
+    }
+}

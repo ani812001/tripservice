@@ -3,6 +3,7 @@ package com.trippy.controller;
 import com.trippy.Entity.PaymentStatus;
 import com.trippy.Entity.Payments;
 import com.trippy.Entity.PaymentsDTO;
+import com.trippy.Entity.Tours;
 import com.trippy.Service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -33,4 +34,6 @@ public class PaymentController {
     public ResponseEntity<List<Payments>> getAllPayments() {
         return ResponseEntity.ok(paymentService.getAllPayments());
     }
+
+
 }
