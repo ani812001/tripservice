@@ -10,9 +10,5 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
-  logging:
-    level:
-      web: TRACE
-
 
 

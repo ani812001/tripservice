@@ -23,10 +23,11 @@ public class TourController {
         return tourService.saveDetail(tripEntity);
     }
 
-
     @GetMapping("/tours")
     public ResponseEntity<List<Tours>> tours()
     {
         return ResponseEntity.ok(tourService.getAllTours());
     }
+
+
 }

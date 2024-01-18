@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,9 +19,13 @@ public class UserService {
     @Autowired
     private UserRepo userRepo;
 
+    @Autowired
+    JdbcTemplate jdbcTemplate;
+
     public User saveUser(User user) {
         try {
-            // Validate user input
+
+
             if (user == null || user.getEmail() == null || user.getEmail().isEmpty()) {
                 log.warn("Invalid user or email provided for saving");
                 return null;
@@ -28,7 +33,7 @@ public class UserService {
 
             return userRepo.save(user);
         } catch (DataIntegrityViolationException e) {
-            // Handle data integrity violation
+
             log.error("Error saving user: {}", e.getMessage());
             return null;
         }
@@ -40,7 +45,7 @@ public class UserService {
     }
 
     public User getUserByEmail(String email) {
-        // Validate input
+
         if (email == null || email.isEmpty()) {
             log.warn("Invalid email provided for user lookup");
             return null;
@@ -56,10 +61,13 @@ public class UserService {
             return false;
         }
 
-        // Fetch user by email
         User user = getUserByEmail(email);
 
-        // Check if user exists and if the provided password matches the stored password
-        return user != null && password.equals(user.getPassword());
+        return user != null && password.equals(user);
     }
+
+    public  User findByEmail(String email) {
+        return userRepo.findByEmail(email);
+    }
+
 }

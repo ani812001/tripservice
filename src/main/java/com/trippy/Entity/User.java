@@ -1,26 +1,54 @@
 package com.trippy.Entity;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Entity
 @Table(name = "users")
-public class User {
+@NoArgsConstructor
+public class User  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String email;
 
-    private String username;
+    private Date dob;
 
-    private String password;
+
+    private String firstname;
+
+    private String lastname;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getDob() {
+        return dob;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    private  String password;
 
     private String mobile;
-
-    @Temporal(TemporalType.DATE)
-    private Date dob;  // Date of Birth
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
@@ -28,34 +56,24 @@ public class User {
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt;
 
-    public User() {
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getPassword() {
+    public  String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public  void setPassword(String password) {
         this.password = password;
     }
 
@@ -67,8 +85,8 @@ public class User {
         this.mobile = mobile;
     }
 
-    public Date getDob() {
-        return dob;
+    public Date getDob(Date dob) {
+        return this.dob;
     }
 
     public void setDob(Date dob) {
@@ -91,7 +109,5 @@ public class User {
         this.updatedAt = updatedAt;
     }
 
-    public String getUsername() {
-        return null;
-    }
 }
+
