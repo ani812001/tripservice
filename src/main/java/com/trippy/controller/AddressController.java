@@ -1,6 +1,6 @@
 package com.trippy.controller;
 
-import com.trippy.Entity.Address;
+import com.trippy.entity.Address;
 import com.trippy.Service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

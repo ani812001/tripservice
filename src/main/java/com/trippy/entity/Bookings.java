@@ -1,4 +1,4 @@
-package com.trippy.Entity;
+package com.trippy.entity;
 
 import jakarta.persistence.*;
 import java.util.Date;

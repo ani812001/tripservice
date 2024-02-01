@@ -1,9 +1,8 @@
 package com.trippy.controller;
 
-import com.trippy.Entity.PaymentStatus;
-import com.trippy.Entity.Payments;
-import com.trippy.Entity.PaymentsDTO;
-import com.trippy.Entity.Tours;
+import com.trippy.entity.PaymentStatus;
+import com.trippy.entity.Payments;
+import com.trippy.entity.PaymentsDTO;
 import com.trippy.Service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

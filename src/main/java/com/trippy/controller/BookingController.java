@@ -1,10 +1,11 @@
 package com.trippy.controller;
 
-import com.trippy.Entity.Bookings;
-import com.trippy.Entity.BookingsDTO;
+import com.trippy.entity.Bookings;
+import com.trippy.entity.BookingsDTO;
 import com.trippy.Service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +21,7 @@ public class BookingController {
     private BookingService bookingService;
 
     @PostMapping("/book")
-    public Bookings postBookingDetails(@RequestBody BookingsDTO bookings) {
+    public Bookings postBookingDetails(@RequestBody @Validated BookingsDTO bookings) {
          Bookings b = new Bookings();
          b.setRefUserId(bookings.getRefUserId());
          b.setNoOfSeats(bookings.getNoOfSeats());
@@ -32,5 +33,6 @@ public class BookingController {
     @GetMapping("/bookings")
     public ResponseEntity<List<Bookings>> getBookings() {
         return ResponseEntity.ok(bookingService.getAllBookings());
+
     }
 }

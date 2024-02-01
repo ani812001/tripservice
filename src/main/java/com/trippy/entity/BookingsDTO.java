@@ -1,8 +1,6 @@
-package com.trippy.Entity;
+package com.trippy.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.*;
 
 import java.io.Serializable;
 
@@ -17,7 +15,6 @@ public class BookingsDTO implements Serializable {
     @JsonProperty
     private Long refUserId;
 
-
     public BookingsDTO() {
     }
 
@@ -27,6 +24,10 @@ public class BookingsDTO implements Serializable {
 
     public void setTourId(Long tourId) {
         this.tourId = tourId;
+    }
+
+    public long getTourIdValue() {
+        return (tourId != null) ? tourId.longValue() : 0; // Change 0 to the default value you prefer
     }
 
     public int getNoOfSeats() {
@@ -44,5 +45,4 @@ public class BookingsDTO implements Serializable {
     public void setRefUserId(Long refUserId) {
         this.refUserId = refUserId;
     }
-
 }

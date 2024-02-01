@@ -1,4 +1,4 @@
-package com.trippy.Entity;
+package com.trippy.entity;
 
 import jakarta.persistence.*;
 
@@ -136,4 +136,5 @@ public class Tours {
     public void setTourName(String tourName) {
         this.tourName = tourName;
     }
+
 }

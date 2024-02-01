@@ -1,6 +1,6 @@
 package com.trippy.controller;
 
-import com.trippy.Entity.Tours;
+import com.trippy.entity.Tours;
 import com.trippy.Service.TourService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,6 +1,6 @@
 package com.trippy.Service;
 
-import com.trippy.Entity.Payments;
+import com.trippy.entity.Payments;
 import com.trippy.Repository.PaymentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

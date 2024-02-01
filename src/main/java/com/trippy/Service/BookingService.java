@@ -1,6 +1,6 @@
 package com.trippy.Service;
 
-import com.trippy.Entity.Bookings;
+import com.trippy.entity.Bookings;
 import com.trippy.Repository.BookingRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

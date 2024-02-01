@@ -1,7 +1,7 @@
 
 package com.trippy.Service;
 
-import com.trippy.Entity.Tours;
+import com.trippy.entity.Tours;
 import com.trippy.Repository.TourRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

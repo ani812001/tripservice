@@ -1,4 +1,4 @@
-package com.trippy.Entity;
+package com.trippy.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;

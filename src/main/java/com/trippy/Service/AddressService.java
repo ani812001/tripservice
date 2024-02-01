@@ -1,6 +1,6 @@
 package com.trippy.Service;
 
-import com.trippy.Entity.Address;
+import com.trippy.entity.Address;
 import com.trippy.Repository.AddressRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

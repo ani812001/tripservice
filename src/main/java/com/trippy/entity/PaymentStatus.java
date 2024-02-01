@@ -1,4 +1,4 @@
-package com.trippy.Entity;
+package com.trippy.entity;
 
 public enum PaymentStatus {
     pending,

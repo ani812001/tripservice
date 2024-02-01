@@ -1,7 +1,7 @@
 package com.trippy.controller;
 
-import com.trippy.Entity.User;
-import com.trippy.Entity.UserRegisterDTO;
+import com.trippy.entity.User;
+import com.trippy.entity.UserRegisterDTO;
 
 import java.util.Calendar;
 

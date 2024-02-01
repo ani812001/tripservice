@@ -1,4 +1,4 @@
-package com.trippy.Entity;
+package com.trippy.entity;
 
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
@@ -21,6 +21,16 @@ public class User  {
     private String firstname;
 
     private String lastname;
+
+    private  String password;
+
+    private String mobile;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdAt;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date updatedAt;
 
     public void setId(Long id) {
         this.id = id;
@@ -45,16 +55,6 @@ public class User  {
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
-
-    private  String password;
-
-    private String mobile;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date updatedAt;
 
     public Long getId() {
         return id;

@@ -1,12 +1,9 @@
 package com.trippy.Service;
-import com.trippy.Entity.User;
+import com.trippy.entity.User;
 import com.trippy.Repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
 
 
 @Service
