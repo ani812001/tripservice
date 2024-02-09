@@ -12,24 +12,22 @@ import java.util.Date;
 
 @Data
 public class UserRegisterDTO implements Serializable {
-
+    //{"email":"san4net@gmail.com","password":"heyRama","firstName":"santosh","lastName":"kumar"}
     @JsonProperty
     @NotEmpty(message="email is required")
     private String email;
 
     @JsonProperty
     @NotEmpty(message = "first_name is required")
-    private String firstname;
+    private String firstName;
 
     @JsonProperty
     @NotEmpty(message = "last_name is required")
-    private String lastname;
+    private String lastName;
 
     @JsonProperty
     @NotEmpty(message="password is required")
     private  String password;
-
-
 
     @JsonProperty
     @NotEmpty(message="mobile is required")
@@ -73,20 +71,20 @@ public class UserRegisterDTO implements Serializable {
         this.dob = dob;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
     public void setFirstname(String firstname) {
-        this.firstname = firstname;
+        this.firstName = firstname;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
 

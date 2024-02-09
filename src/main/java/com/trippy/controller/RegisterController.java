@@ -20,6 +20,7 @@ public class RegisterController {
     @Autowired
     private UserService userService;
 
+
     @PostMapping("/register")
     public ResponseEntity<?> registration(@RequestBody UserRegisterDTO user) {
 

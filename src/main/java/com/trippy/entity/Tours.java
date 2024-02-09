@@ -19,8 +19,6 @@ public class Tours {
     @Temporal(TemporalType.DATE)
     private Date endDate;
 
-    private int capacity;
-
     private double unitPrice;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -87,14 +85,6 @@ public class Tours {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
     }
 
     public double getUnitPrice() {

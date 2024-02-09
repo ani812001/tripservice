@@ -18,7 +18,9 @@ public class BookingService {
     }
 
     public List<Bookings> getAllBookings() {
-        System.out.println("got request");
+        System.out.println();
         return bookingRepo.findAll();
     }
 }
+
+

@@ -11,10 +11,11 @@ public class Utils {
         User u = new User();
         u.setEmail(userRegisterDTO.getEmail());
         u.setCreatedAt(Calendar.getInstance().getTime());
-        u.setFirstname(userRegisterDTO.getFirstname());
-        u.setLastname(userRegisterDTO.getLastname());
+        u.setFirstname(userRegisterDTO.getFirstName());
+        u.setLastname(userRegisterDTO.getLastName());
         u.setPassword(userRegisterDTO.getPassword());
         u.setDob(userRegisterDTO.getDob());
+        u.setMobile("989898393");
         u.setMobile(userRegisterDTO.getMobile());
         return u;
     }

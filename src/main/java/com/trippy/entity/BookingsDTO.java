@@ -3,6 +3,7 @@ package com.trippy.entity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class BookingsDTO implements Serializable {
 
@@ -10,10 +11,21 @@ public class BookingsDTO implements Serializable {
     private Long tourId;
 
     @JsonProperty
-    private int noOfSeats;
+    private Date startDate;
+
+
+    // New fields
+    @JsonProperty
+    private String name;
 
     @JsonProperty
-    private Long refUserId;
+    private String email;
+
+    @JsonProperty
+    private String phoneNumber;
+
+    @JsonProperty
+    private int noOfTravelers;
 
     public BookingsDTO() {
     }
@@ -26,23 +38,51 @@ public class BookingsDTO implements Serializable {
         this.tourId = tourId;
     }
 
-    public long getTourIdValue() {
-        return (tourId != null) ? tourId.longValue() : 0; // Change 0 to the default value you prefer
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public int getNoOfSeats() {
-        return noOfSeats;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    public void setNoOfSeats(int noOfSeats) {
-        this.noOfSeats = noOfSeats;
+
+// Getters and setters for existing fields
+
+    // Getters and setters for new fields
+
+    public String getName() {
+        return name;
     }
 
-    public Long getRefUserId() {
-        return refUserId;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setRefUserId(Long refUserId) {
-        this.refUserId = refUserId;
+    public String getEmail() {
+        return email;
     }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+
+    public int getNoOfTravelers() {
+        return noOfTravelers;
+    }
+
+    public void setNoOfTravelers(int noOfTravelers) {
+        this.noOfTravelers = noOfTravelers;
+    }
+
+
 }

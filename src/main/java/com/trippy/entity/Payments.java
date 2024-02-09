@@ -1,7 +1,6 @@
 package com.trippy.entity;
 
 import jakarta.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "payments")
@@ -13,27 +12,54 @@ public class Payments {
     @Column(name = "booking_id")
     private Long bookingId;
 
-    @Temporal(TemporalType.DATE)
-    private Date date;
-
     @Column(name = "card_no")
     private String cardNo;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "status")
-    private PaymentStatus status;
+    @Column(name = "expiry_date")
+    private String expiryDate;
 
-    private double amount;
+    @Column(name = "CVV")
+    private String CVV;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "created_at")
-    private Date createdAt;
+    @Column(name = "full_name")
+    private String fullName;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "updated_at")
-    private Date updatedAt;
+
 
     public Payments() {
+    }
+
+
+    public String getCardNo(String card_no) {
+        return cardNo;
+    }
+
+    public void setCardNo(String cardNo) {
+        this.cardNo = cardNo;
+    }
+
+    public String getExpiryDate(String expiry_date) {
+        return expiryDate;
+    }
+
+    public void setExpiryDate(String expiryDate) {
+        this.expiryDate = expiryDate;
+    }
+
+    public String getCVV() {
+        return CVV;
+    }
+
+    public void setCVV(String CVV) {
+        this.CVV = CVV;
+    }
+
+    public String getFullName(String full_name) {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public Long getId() {
@@ -44,7 +70,7 @@ public class Payments {
         this.id = id;
     }
 
-    public Long getBookingId() {
+    public Long getBookingId(Long booking_id) {
         return bookingId;
     }
 
@@ -52,51 +78,5 @@ public class Payments {
         this.bookingId = bookingId;
     }
 
-    public Date getDate() {
-        return date;
-    }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public String getCardNo() {
-        return cardNo;
-    }
-
-    public void setCardNo(String cardNo) {
-        this.cardNo = cardNo;
-    }
-
-    public PaymentStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(PaymentStatus status) {
-        this.status = status;
-    }
-
-    public double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
 }

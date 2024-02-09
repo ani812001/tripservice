@@ -1,6 +1,7 @@
 package com.trippy.entity;
 
 import jakarta.persistence.*;
+
 import java.util.Date;
 
 @Entity
@@ -9,17 +10,24 @@ public class Bookings {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    //
     @Column(name = "tour_id")
     private Long tourId;
-
-    @Column(name = "no_of_seats")
-    private int noOfSeats;
 
     @Column(name = "ref_user_id")
     private Long refUserId;
 
-    private String status;
+    @Column(name = "start_date")
+    private Date startDate;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "phone_number")
+    private String phoneNumber;
+
+    @Column(name = "number_of_travelers")
+    private int noOfTravelers;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at")
@@ -29,8 +37,7 @@ public class Bookings {
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    public Bookings() {
-    }
+    public Bookings() {}
 
     public Long getId() {
         return id;
@@ -40,20 +47,12 @@ public class Bookings {
         this.id = id;
     }
 
-    public long getTourId() {
+    public Long getTourId() {
         return tourId;
     }
 
-    public void setTourId(long tourId) {
+    public void setTourId(Long tourId) {
         this.tourId = tourId;
-    }
-
-    public int getNoOfSeats() {
-        return noOfSeats;
-    }
-
-    public void setNoOfSeats(int noOfSeats) {
-        this.noOfSeats = noOfSeats;
     }
 
     public Long getRefUserId() {
@@ -62,14 +61,6 @@ public class Bookings {
 
     public void setRefUserId(Long refUserId) {
         this.refUserId = refUserId;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public Date getCreatedAt() {
@@ -88,4 +79,34 @@ public class Bookings {
         this.updatedAt = updatedAt;
     }
 
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setNumberOfTravelers(int no_of_travelers) {
+        this.noOfTravelers = no_of_travelers;
+    }
+
+
 }
+

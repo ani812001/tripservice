@@ -55,7 +55,6 @@ public class UserService {
     }
 
     public boolean authenticateUser(String email, String password) {
-        System.out.println("password"+password);
         // Validate input
         if (email == null || email.isEmpty() || password == null || password.isEmpty()) {
             log.warn("Invalid email or password provided for authentication");
@@ -63,8 +62,6 @@ public class UserService {
         }
 
         User user = getUserByEmail(email);
-        System.out.printf("user password from db %s  and entered = %s", user.getPassword(),  password);
-
         return user != null && password.equals(user.getPassword());
     }
 

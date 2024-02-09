@@ -3,7 +3,7 @@ package com.trippy.entity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
-import java.util.Date;
+
 
 public class PaymentsDTO implements Serializable {
 
@@ -14,13 +14,14 @@ public class PaymentsDTO implements Serializable {
     private String cardNo;
 
     @JsonProperty
-    private String status;
+    private String cvv;
 
     @JsonProperty
-    private Date date;
+    private String fullName;
 
     @JsonProperty
-    private int amount;
+    private String expiryDate;
+
 
     public Long getBookingId() {
         return bookingId;
@@ -38,27 +39,27 @@ public class PaymentsDTO implements Serializable {
         this.cardNo = cardNo;
     }
 
-    public String getStatus() {
-        return status;
+    public String getCvv() {
+        return cvv;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setCvv(String cvv) {
+        this.cvv = cvv;
     }
 
-    public Date getDate() {
-        return date;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public int getAmount() {
-        return amount;
+    public String getExpiryDate() {
+        return expiryDate;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setExpiryDate(String expiryDate) {
+        this.expiryDate = expiryDate;
     }
 }
